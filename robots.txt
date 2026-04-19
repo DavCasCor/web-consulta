@@ -1,0 +1,8 @@
+# robots.txt — davidcastroreumatologo.net
+# Permite la indexación completa del sitio
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.davidcastroreumatologo.net/sitemap.xml

@@ -1219,6 +1219,32 @@
     }
     .footer a:hover { color: var(--accent); }
 
+    /* Enlace social del footer */
+    .footer-social {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.55rem 0.95rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 3px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.85) !important;
+      transition: all 0.3s ease;
+    }
+    .footer-social a:hover {
+      border-color: var(--accent);
+      color: #fff !important;
+      background: rgba(199, 93, 74, 0.12);
+    }
+    .footer-social svg {
+      flex-shrink: 0;
+    }
+
     .footer-bottom {
       padding-top: 2rem;
       border-top: 1px solid rgba(255,255,255,0.1);
@@ -1524,6 +1550,99 @@
     }
     .price-item-highlight:hover {
       background: #0c1f35;
+    }
+
+    /* ================================================================
+       BANNER DE COOKIES
+    ================================================================ */
+    .cookie-banner {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      max-width: 520px;
+      background: var(--ink);
+      color: #fff;
+      padding: 1.8rem 1.8rem 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+      z-index: 9999;
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .cookie-banner.visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .cookie-banner-label {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+    .cookie-banner h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    .cookie-banner p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+      margin-bottom: 1.2rem;
+    }
+    .cookie-banner p a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .cookie-banner-actions {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .cookie-btn {
+      flex: 1;
+      min-width: 130px;
+      padding: 0.75rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cookie-btn-accept {
+      background: var(--accent);
+      color: #fff;
+    }
+    .cookie-btn-accept:hover { background: var(--accent-dark); }
+    .cookie-btn-reject {
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .cookie-btn-reject:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.4);
+    }
+    @media (max-width: 520px) {
+      .cookie-banner {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        padding: 1.4rem 1.4rem 1.2rem;
+      }
+      .cookie-banner-actions { flex-direction: column; }
+      .cookie-btn { width: 100%; }
     }
 
     /* ================================================================
@@ -2592,6 +2711,18 @@
             Reumatología basada en la evidencia, con atención personalizada.
             Consulta privada en Regus — FuturDerm, Ciudad Real.
           </p>
+
+          <!-- Redes sociales -->
+          <div class="footer-social">
+            <a href="https://www.instagram.com/reumacastroo/" target="_blank" rel="noopener" aria-label="Instagram @reumacastroo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              <span>@reumacastroo</span>
+            </a>
+          </div>
         </div>
 
         <div>
@@ -2616,13 +2747,12 @@
         </div>
 
         <div>
-          <h5>Científico</h5>
+          <h5>Legal</h5>
           <ul>
+            <li><a href="aviso-legal.html">Aviso legal</a></li>
+            <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+            <li><a href="politica-cookies.html">Política de cookies</a></li>
             <li><a href="https://orcid.org/0000-0001-7315-6274" target="_blank" rel="noopener">ORCID</a></li>
-            <li><a href="#">Publicaciones</a></li>
-            <li><a href="#">Aviso legal</a></li>
-            <li><a href="#">Política de privacidad</a></li>
-            <li><a href="#">Política de cookies</a></li>
           </ul>
         </div>
       </div>
@@ -2647,6 +2777,84 @@
       <path d="M12 19V5M5 12l7-7 7 7"/>
     </svg>
   </button>
+
+  <!-- ============================================================
+       BANNER DE COOKIES (conforme a AEPD)
+  ============================================================ -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc">
+    <div class="cookie-banner-label">🍪 Aviso de cookies</div>
+    <h4 id="cookieTitle">Cuidamos su privacidad</h4>
+    <p id="cookieDesc">
+      Usamos cookies técnicas necesarias y, con su consentimiento, cookies analíticas
+      para mejorar la web. Puede aceptar, rechazar, o conocer más en nuestra
+      <a href="politica-cookies.html">Política de Cookies</a>.
+    </p>
+    <div class="cookie-banner-actions">
+      <button class="cookie-btn cookie-btn-reject" id="cookieReject">Rechazar</button>
+      <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Aceptar</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       GOOGLE ANALYTICS 4 — ACTIVACIÓN CONDICIONAL
+
+       ⚠️ PARA ACTIVARLO:
+       1. Crea una propiedad en https://analytics.google.com
+       2. Copia el ID de medición (formato: G-XXXXXXXXXX)
+       3. Sustituye 'G-XXXXXXXXXX' abajo por tu ID real
+       4. El script solo se carga si el usuario acepta las cookies
+  ============================================================ -->
+  <script>
+    // ID de medición de GA4 - SUSTITUIR por el tuyo cuando lo tengas
+    window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+    function loadGoogleAnalytics() {
+      if (!window.GA_MEASUREMENT_ID || window.GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
+      if (window.gaLoaded) return;
+      window.gaLoaded = true;
+
+      // Cargar script de gtag.js
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', window.GA_MEASUREMENT_ID, {
+        anonymize_ip: true,
+        cookie_flags: 'SameSite=None;Secure'
+      });
+    }
+
+    // Gestión del consentimiento
+    (function() {
+      const banner = document.getElementById('cookieBanner');
+      const btnAccept = document.getElementById('cookieAccept');
+      const btnReject = document.getElementById('cookieReject');
+      const consent = localStorage.getItem('cookie_consent');
+
+      if (consent === 'accepted') {
+        loadGoogleAnalytics();
+      } else if (consent !== 'rejected') {
+        // No hay decisión previa → mostrar banner tras 800ms para no saturar la primera impresión
+        setTimeout(() => banner.classList.add('visible'), 800);
+      }
+
+      btnAccept.addEventListener('click', () => {
+        localStorage.setItem('cookie_consent', 'accepted');
+        banner.classList.remove('visible');
+        loadGoogleAnalytics();
+      });
+
+      btnReject.addEventListener('click', () => {
+        localStorage.setItem('cookie_consent', 'rejected');
+        banner.classList.remove('visible');
+      });
+    })();
+  </script>
 
   <!-- ===============================================================
        JAVASCRIPT
