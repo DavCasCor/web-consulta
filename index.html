@@ -10,19 +10,21 @@
   <meta name="keywords" content="reumatólogo Ciudad Real, reumatología, espondiloartritis, artritis psoriásica, artritis reumatoide, osteoporosis, lupus, Dr. David Castro Corredor" />
   <meta name="author" content="Dr. David Castro Corredor" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.davidcastroreumatologo.com/" />
+  <link rel="canonical" href="https://www.davidcastroreumatologo.net/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:title" content="Dr. David Castro Corredor — Reumatólogo en Ciudad Real" />
   <meta property="og:description" content="Reumatología basada en evidencia con trato cercano. Consulta en Ciudad Real." />
-  <meta property="og:url" content="https://www.davidcastroreumatologo.com/" />
+  <meta property="og:url" content="https://www.davidcastroreumatologo.net/" />
+  <meta property="og:image" content="https://www.davidcastroreumatologo.net/dr-castro.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dr. David Castro Corredor — Reumatólogo en Ciudad Real" />
   <meta name="twitter:description" content="Reumatología basada en evidencia con trato cercano." />
+  <meta name="twitter:image" content="https://www.davidcastroreumatologo.net/dr-castro.jpg" />
 
   <!-- Schema.org — Physician -->
   <script type="application/ld+json">
@@ -31,9 +33,9 @@
     "@type": "Physician",
     "name": "Dr. David Castro Corredor",
     "medicalSpecialty": "Rheumatology",
-    "url": "https://www.davidcastroreumatologo.com/",
+    "url": "https://www.davidcastroreumatologo.net/",
     "telephone": "+34 621 22 83 38",
-    "image": "https://s3-eu-west-1.amazonaws.com/doctoralia.es/doctor/6d2973/6d29739ab6fbb7a614ec986fab45dbfa_large.jpg",
+    "image": "https://www.davidcastroreumatologo.net/dr-castro.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Avenida de la Ciencia 1",
@@ -382,46 +384,21 @@
       max-width: 460px;
       margin-left: auto;
     }
+    /* Marco del retrato — contiene la foto del doctor */
     .hero-portrait-frame {
       position: absolute;
       inset: 0;
-      background: linear-gradient(160deg, var(--clinical) 0%, #0c1f35 100%);
       border-radius: 2px;
       overflow: hidden;
       box-shadow: 0 40px 80px -30px rgba(15, 26, 43, 0.4);
+      display: block;
     }
-    /* Placeholder elegante: iniciales en display serif sobre gradiente azul */
-    .hero-portrait-initials {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: clamp(6rem, 18vw, 12rem);
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.92);
-      letter-spacing: -0.05em;
-    }
-    .hero-portrait-initials::after {
-      content: '';
-      position: absolute;
-      bottom: 18%;
-      left: 15%;
-      right: 15%;
-      height: 1px;
-      background: rgba(255,255,255,0.3);
-    }
-    .hero-portrait-caption {
-      position: absolute;
-      bottom: 2rem;
-      left: 2rem;
-      color: rgba(255,255,255,0.85);
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+    .hero-portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%; /* encuadre ligeramente hacia la cara */
+      display: block;
     }
 
     /* Badge flotante */
@@ -1739,17 +1716,15 @@
               <div class="hero-badge-value">Doctor PhD (Cum Laude) · Experto en ecografía ME</div>
             </div>
 
-            <!-- Retrato placeholder elegante. Sustituir por <img> cuando haya foto real -->
-            <div class="hero-portrait-frame">
-              <div class="hero-portrait-initials">Dc</div>
-              <div class="hero-portrait-caption">Dr. Castro Corredor — Reumatología</div>
-            </div>
-            <!--
-              PARA USAR UNA FOTO REAL, reemplaza el bloque <div class="hero-portrait-frame">…</div>
-              por:
-              <img src="ruta/a/foto.jpg" alt="Dr. David Castro Corredor"
-                   class="hero-portrait-frame" style="object-fit:cover;">
-            -->
+            <!-- Retrato profesional del Dr. Castro Corredor -->
+            <picture class="hero-portrait-frame">
+              <source srcset="dr-castro.webp" type="image/webp">
+              <img src="dr-castro.jpg"
+                   alt="Dr. David Castro Corredor, reumatólogo en Ciudad Real"
+                   loading="eager"
+                   fetchpriority="high"
+                   width="920" height="1150">
+            </picture>
           </div>
         </div>
       </div>
